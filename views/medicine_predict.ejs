@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disease Prediction</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full">
+    <h1 class="text-2xl font-bold text-center text-green-800 mb-6">Disease Prediction Form</h1>
+
+    <form action="/medicine_predict" id="predictionForm" class="space-y-4" method="POST">
+
+      
+      <div>
+        <label for="cause" class="block font-semibold text-gray-700">Cause</label>
+        <input list="causeList" id="cause" name="Causes" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="causeList">
+          <option value="Viral Infection">
+          <option value="Stress">
+          <option value="Food Poisoning">
+          <option value="Rheumatoid Arthritis">
+          <option value="High Blood Pressure">
+          <option value="Allergies">
+          <option value="Poor Diet">
+          <option value="Depression">
+          <option value="Cold Weather">
+          <option value="Motion Sickness">
+          <option value="Migraine Triggers">
+          <option value="Spicy Food">
+          <option value="Autoimmune Response">
+          <option value="Herniated Disc">
+          <option value="Pregnancy">
+          <option value="Anemia">
+          <option value="Osteoarthritis">
+          <option value="Dehydration">
+          <option value="Tension">
+          <option value="Overeating">
+          <option value="Menstrual Cycle">
+          <option value="Heart Disease">
+          <option value="Hypothyroidism">
+          <option value="Infection">
+          <option value="COVID-19 Exposure">
+          <option value="Overexertion">
+          <option value="Eye Strain">
+          <option value="Sciatica">
+          <option value="Chronic Fatigue Syndrome">
+          <option value="Bacterial Infection">
+        </datalist>
+      </div>
+
+      
+      <div>
+        <label for="disease" class="block font-semibold text-gray-700">Disease</label>
+        <input list="diseaseList" id="disease" name="Disease" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="diseaseList">
+          <option value="Common Cold">
+          <option value="Migraine">
+          <option value="Gastroenteritis">
+          <option value="Arthritis">
+          <option value="Hypertension">
+          <option value="Allergic Reaction">
+          <option value="Indigestion">
+          <option value="Major Depressive">
+          <option value="Influenza">
+          <option value="Motion Sickness">
+          <option value="Gastritis">
+          <option value="Rheumatoid Arthritis">
+          <option value="Tonsillitis">
+          <option value="Sciatica">
+          <option value="Morning Sickness">
+          <option value="Iron Deficiency">
+          <option value="Panic Disorder">
+          <option value="Dermatitis">
+          <option value="Respiratory infection">
+          <option value="Heat Exhaustion">
+          <option value="Tension Headache">
+          <option value="Menstrual Cramps">
+          <option value="Coronary ArteryDisease">
+          <option value="Thyroid Disorder">
+          <option value="Pneumonia">
+          <option value="COVID-19">
+          <option value="Muscle Strain">
+          <option value="Vision Fatigue">
+          <option value="Herniated Disc">
+          <option value="Chronic Fatigue Syndrome">
+          <option value="Anxiety Disorder">
+          <option value="Muscle Overuse">
+          <option value="s  Arthritis">
+          <option value="Major Depressive Disorder">
+          <option value="Allergic Reacti">
+          <option value="Chronic Fatigue">
+          <option value=" Arthritis">
+          <option value="RespiratoryInfection">
+          <option value="Coronary Artery">
+          <option value="is  Arthritis">
+          <option value="Strep Throat">
+          <option value="Respiratory Infection">
+          <option value="Coronary Artery Disease">
+          <option value="Respiratory">
+          <option value="Strep Throat     ">
+          <option value="Iron Deficiency ">
+          <option value="Panic Disorder  ">
+          <option value="Dermatitis      ">
+          <option value="Respiratory     AntiInfection">
+          <option value="Arthritis     ">
+          <option value="Heat Exhaustion Hydr">
+          <option value="Tension Headache Rel">
+          <option value="Indigestion     Anta">
+          <option value="Menstrual Cramps Pai">
+          <option value="Coronary Artery Disease   ">
+          <option value="Disease         ">
+          <option value="Pheumonia      ">
+          <option value="COVID-19      ">
+          <option value="Allergic Reaction An">
+          <option value="Muscle Strain  ">
+        </datalist>
+      </div>
+
+      
+      <div>
+        <label for="symptom1" class="block font-semibold text-gray-700">Symptom 1</label>
+        <input list="symptomList1" id="symptom1" name="Symptom_1" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="symptomList1">
+          <option value="Fever">
+          <option value="Headache">
+          <option value="Nausea">
+          <option value="Joint Pain">
+          <option value="Chest Pain">
+          <option value="Fatigue">
+          <option value="Cough">
+          <option value="Back Pain">
+          <option value="Anxiety">
+          <option value="Skin Rash">
+          <option value="Dizziness">
+          <option value="Abdominal Pain">
+          <option value="Sore Throat">
+        </datalist>
+      </div>
+
+      
+      <div>
+        <label for="symptom2" class="block font-semibold text-gray-700">Symptom 2</label>
+        <input list="symptomList2" id="symptom2" name="Symptom_2" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="symptomList2">
+          <option value="Cough">
+          <option value="Fatigue">
+          <option value="Vomiting">
+          <option value="Dizziness">
+          <option value="Redness">
+          <option value="Bloating">
+          <option value="Sadness">
+          <option value="Muscle Aches">
+          <option value="Sneezing">
+          <option value="Blurred Vision">
+          <option value="Diarrhea">
+          <option value="Swelling">
+          <option value="Sore Throat">
+          <option value="Numbness">
+          <option value="Weakness">
+          <option value="Palpitations">
+          <option value="Chills">
+          <option value="Shortness of breath">
+          <option value="Difficulty breathing">
+        </datalist>
+      </div>
+
+      
+      <div>
+        <label for="gender" class="block font-semibold text-gray-700">Gender</label>
+        <select id="gender" name="Gender" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition">Predict Disease</button>
+    </form>
+  </div>
+</body>
+</html>

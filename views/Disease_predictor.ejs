@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disease Prediction</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full">
+    <h1 class="text-2xl font-bold text-center text-green-800 mb-6">Disease Prediction Form</h1>
+
+    <form action="/predictionForm" id="predictionForm" class="space-y-4" method="POST">
+      
+      <div>
+        <label for="cause" class="block font-semibold text-gray-700">Cause</label>
+        <input list="causeList" id="cause" name="Causes" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="causeList">
+          <option value="Viral Infection">
+          <option value="Stress">
+          <option value="Food Poisoning">
+          <option value="Rheumatoid Arthritis">
+          <option value="High Blood Pressure">
+          <option value="Allergies">
+          <option value="Poor Diet">
+          <option value="Depression">
+          <option value="Cold Weather">
+          <option value="Motion Sickness">
+          <option value="Migraine Triggers">
+          <option value="Spicy Food">
+          <option value="Autoimmune Response">
+          <option value="Herniated Disc">
+          <option value="Pregnancy">
+          <option value="Anemia">
+          <option value="Osteoarthritis">
+          <option value="Dehydration">
+          <option value="Tension">
+          <option value="Overeating">
+          <option value="Menstrual Cycle">
+          <option value="Heart Disease">
+          <option value="Hypothyroidism">
+          <option value="Infection">
+          <option value="COVID-19 Exposure">
+          <option value="Overexertion">
+          <option value="Eye Strain">
+          <option value="Sciatica">
+          <option value="Chronic Fatigue Syndrome">
+          <option value="Bacterial Infection">
+        </datalist>
+      </div>
+
+      <div>
+        <label for="medicine" class="block font-semibold text-gray-700">Medicine</label>
+        <input list="medicineList" id="medicine" name="Medicine" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="medicineList">
+          <option value="Ibuprofen, Rest">
+          <option value="Sumatriptan">
+          <option value="Oral Rehydration">
+          <option value="NSAIDs">
+          <option value="Amlodipine">
+          <option value="Antihistamine">
+          <option value="Antacids">
+          <option value="Sertraline">
+          <option value="Acetaminophen">
+          <option value="Honey, Rest">
+          <option value="Beta-blockers">
+          <option value="Ginger, Vitamin B6">
+          <option value="Iron Supplements">
+          <option value="Cognitive Therapy">
+          <option value="Topical Steroids">
+          <option value="Antivirals, Rest">
+          <option value="Hydration, Rest">
+          <option value="Relaxation, NSAIDs">
+          <option value="Nitroglycerin">
+          <option value="Levothyroxine">
+          <option value="Antibiotics, Rest">
+          <option value="Isolation, Fluids">
+          <option value="Pain Relievers">
+          <option value="Dimenhydrinate">
+          <option value="Therapy, Medication">
+          <option value="Fluids, Bland Diet">
+          <option value="Rest, Eye Exercises">
+          <option value="Penicillin">
+        </datalist>
+      </div>
+
+      <div>
+        <label for="symptom1" class="block font-semibold text-gray-700">Symptom 1</label>
+        <input list="symptomList1" id="symptom1" name="Symptom_1" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="symptomList1">
+          <option value="Fever">
+          <option value="Headache">
+          <option value="Nausea">
+          <option value="Joint Pain">
+          <option value="Chest Pain">
+          <option value="Fatigue">
+          <option value="Cough">
+          <option value="Back Pain">
+          <option value="Anxiety">
+          <option value="Skin Rash">
+          <option value="Dizziness">
+          <option value="Abdominal Pain">
+          <option value="Sore Throat">
+        </datalist>
+      </div>
+
+      <div>
+        <label for="symptom2" class="block font-semibold text-gray-700">Symptom 2</label>
+        <input list="symptomList2" id="symptom2" name="Symptom_2" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Start typing...">
+        <datalist id="symptomList2">
+          <option value="Cough">
+          <option value="Fatigue">
+          <option value="Vomiting">
+          <option value="Dizziness">
+          <option value="Redness">
+          <option value="Bloating">
+          <option value="Sadness">
+          <option value="Muscle Aches">
+          <option value="Sneezing">
+          <option value="Blurred Vision">
+          <option value="Diarrhea">
+          <option value="Swelling">
+          <option value="Sore Throat">
+          <option value="Numbness">
+          <option value="Weakness">
+          <option value="Palpitations">
+          <option value="Chills">
+          <option value="Shortness of breath">
+          <option value="Difficulty breathing">
+        </datalist>
+      </div>
+
+      <div>
+        <label for="gender" class="block font-semibold text-gray-700">Gender</label>
+        <select id="gender" name="Gender" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition">Predict Disease</button>
+    </form>
+
+    <!-- <div id="result" class="mt-6 text-center text-green-700 font-semibold hidden"></div> -->
+  </div>
+
+  <script>
+    // document.getElementById("predictionForm").addEventListener("submit", function(e) {
+    //   // e.preventDefault();
+    //   // document.getElementById("result").textContent = "Prediction complete! (Integrate backend to show result)";
+    //   // document.getElementById("result").classList.remove("hidden");
+    // });
+  </script>
+</body>
+</html>
