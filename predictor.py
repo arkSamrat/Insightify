@@ -21,6 +21,10 @@ with open('model/other_medicine_predictor.pkl','rb') as f:
 with open('model/other_target_2_encoder.pkl','rb') as f:
     target_2_encoder=pickle.load(f)
 
+with open('model/crowd_model.pkl', 'rb') as f:
+    crowd_model = pickle.load(f)
+
+
 @app.route('/predict', methods=['POST'])
 def predict_travel():
     data = request.get_json()
@@ -47,6 +51,41 @@ def predict_medicine():
     prediction=medicine_predictor.predict(input_df)
     new_prediction = target_2_encoder.inverse_transform(prediction)
     return jsonify({'prediction':new_prediction.tolist()}) 
+
+@app.route('/predict_crowd', methods=['POST'])
+def predict_crowd():
+    try:
+        data = request.get_json()
+
+        # convert date
+        dt = pd.to_datetime(data["Date"])
+
+        # build full input for model
+        input_data = {
+        "Place": data["Place"],
+        "State": data["State"],
+        "Weather": data["Weather"],
+        "Event": data["Event"],
+        "Region": data["Region"],
+        "Transportation_Type": data["Transportation_Type"],
+        "day": dt.day,
+        "month": dt.month,
+        "hour": dt.hour,
+        "Day_of_Week": dt.day_name(),
+        "isWeekend": 1 if dt.weekday() >= 5 else 0
+        }
+
+        df = pd.DataFrame([input_data])
+
+        prediction = crowd_model.predict(df)
+
+        return jsonify({
+            "prediction": round(float(prediction[0]),4) * 100
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
 
 if __name__ == '__main__':
     app.run(port=5000)

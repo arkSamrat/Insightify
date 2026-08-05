@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowd Prediction Result</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f2f4f8;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .card{
+            width:420px;
+            background:#fff;
+            padding:35px;
+            border-radius:15px;
+            box-shadow:0 10px 30px rgba(0,0,0,.15);
+            text-align:center;
+        }
+
+        h1{
+            color:#333;
+            margin-bottom:25px;
+        }
+
+        .circle{
+            width:180px;
+            height:180px;
+            margin:20px auto;
+            border-radius:50%;
+            border:12px solid #4CAF50;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:42px;
+            font-weight:bold;
+            color:#4CAF50;
+        }
+
+        .status{
+            font-size:22px;
+            margin-top:20px;
+            font-weight:bold;
+        }
+
+        .description{
+            margin-top:15px;
+            font-size:17px;
+            color:#555;
+            line-height:1.5;
+        }
+
+        a{
+            display:inline-block;
+            margin-top:30px;
+            text-decoration:none;
+            background:#007BFF;
+            color:white;
+            padding:12px 25px;
+            border-radius:8px;
+        }
+
+        a:hover{
+            background:#0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <h1>Crowd Prediction</h1>
+
+    <div class="circle">
+        <%= prediction %>%
+    </div>
+
+    <div class="status">
+        <% if(prediction < 30){ %>
+            🟢 Low Crowd
+        <% } else if(prediction < 70){ %>
+            🟡 Moderate Crowd
+        <% } else { %>
+            🔴 High Crowd
+        <% } %>
+    </div>
+
+    <div class="description">
+        There is an estimated
+        <strong><%= prediction %>%</strong>
+        chance that this location will experience crowding during the selected date and time.
+    </div>
+
+    <a href="/">Predict Again</a>
+
+</div>
+
+</body>
+</html>

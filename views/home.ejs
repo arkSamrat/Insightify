@@ -1,150 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard | ALGNITION</title>
+  <title>Dashboard | Insightify</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 </head>
+
 <body class="bg-gradient-to-r from-green-100 via-blue-100 to-purple-100 font-sans min-h-screen">
+
+  <!-- Navbar -->
   <header class="bg-white shadow-md p-4 sticky top-0 z-50 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-green-600">ALGNITION</h1>
+    <h1 class="text-2xl font-bold text-green-600">
+      Insightify
+    </h1>
+
     <nav class="space-x-6">
       <a href="/home" class="text-gray-700 hover:text-green-500">Home</a>
-      <a href="/insights" class="text-gray-700 hover:text-green-500">Insights</a>
-      <!-- <a href="/upload" class="text-gray-700 hover:text-green-500">Upload</a> -->
-      <a href="/logout" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">Logout</a>
+      <a href="/dashboard" class="text-gray-700 hover:text-green-500">Dashboard</a>
+      <a href="/logout" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md">
+        Logout
+      </a>
     </nav>
   </header>
 
+
   <div class="flex flex-col md:flex-row">
-    
+
+    <!-- Sidebar -->
     <aside class="bg-white w-full md:w-1/5 p-6 shadow-md">
-      <ul class="space-y-4">
-        <li><a href="/home" class="block text-green-700 font-semibold hover:text-green-900">Dashboard Overview</a></li>
-        <li><a href="#performance" class="block text-gray-700 hover:text-green-600">Performance</a></li>
-        <!-- <li><a href="#upload" class="block text-gray-700 hover:text-green-600">Upload Data</a></li> -->
-        <!-- <li><a href="#smart-ai" class="block text-gray-700 hover:text-green-600">AI Recommendations</a></li> -->
-        <li><a href="/Evaluation" class="block text-gray-700 hover:text-green-600">Evaluation for Travel</a></li>
-        <li><a href="/Disease_predictor" class="block text-gray-700 hover:text-green-600">Know Your Disease</a></li>
-        <li><a href="/medicine_predictor" class="block text-gray-700 hover:text-green-600">Know Your Medicine</a></li>
-        <!-- <li><a href="#settings" class="block text-gray-700 hover:text-green-600">Settings</a></li> -->
+      <ul class="space-y-5">
+
+        <li>
+          <a href="/home" class="text-green-700 font-bold">
+            Dashboard Overview
+          </a>
+        </li>
+
+        <li>
+          <a href="/Evaluation" class="text-gray-700 hover:text-green-600">
+            🛒 Purchase / Travel Predictor
+          </a>
+        </li>
+
+        <li>
+          <a href="/Disease_predictor" class="text-gray-700 hover:text-green-600">
+            🩺 Disease Predictor
+          </a>
+        </li>
+
+        <li>
+          <a href="/medicine_predictor" class="text-gray-700 hover:text-green-600">
+            💊 Medicine Predictor
+          </a>
+        </li>
+
+        <li>
+          <a href="/crowd_predictor" class="text-gray-700 hover:text-green-600">
+            👥 Crowd Predictor
+          </a>
+        </li>
+
       </ul>
     </aside>
 
-    <main class="flex-1 p-8 space-y-10 bg-gradient-to-br from-white to-green-50">
-      
-      <section class="text-gray-800">
-        <h2 class="text-3xl font-bold mb-4">Welcome Back, Innovator! 🚀</h2>
-        <p class="text-gray-600 text-lg">Use AI-powered insights to scale your startup faster and smarter.</p>
+
+    
+    <main class="flex-1 p-8 bg-gradient-to-br from-white to-green-50">
+
+     
+      <section class="mb-10">
+        <h2 class="text-4xl font-bold text-gray-800 mb-3">
+          Welcome to Insightify 🚀
+        </h2>
+        <p class="text-lg text-gray-600">
+          Smart predictions powered by Machine Learning.
+        </p>
       </section>
 
+
       
-      <section id="performance" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+
         <div class="bg-green-100 p-6 rounded-xl shadow">
-          <h3 class="text-lg font-semibold text-green-800">Monthly Sales</h3>
-          <p class="text-2xl font-bold text-gray-800 mt-2">$0</p>
+          <h3 class="text-lg font-semibold text-green-800">
+            Total Predictions
+          </h3>
+          <p class="text-3xl font-bold mt-2">0</p>
         </div>
+
         <div class="bg-blue-100 p-6 rounded-xl shadow">
-          <h3 class="text-lg font-semibold text-blue-800">Site Traffic</h3>
-          <p class="text-2xl font-bold text-gray-800 mt-2">0 Visitors</p>
+          <h3 class="text-lg font-semibold text-blue-800">
+            Models Active
+          </h3>
+          <p class="text-3xl font-bold mt-2">4</p>
         </div>
+
         <div class="bg-purple-100 p-6 rounded-xl shadow">
-          <h3 class="text-lg font-semibold text-purple-800">Conversion Rate</h3>
-          <p class="text-2xl font-bold text-gray-800 mt-2">0%</p>
+          <h3 class="text-lg font-semibold text-purple-800">
+            Accuracy
+          </h3>
+          <p class="text-3xl font-bold mt-2">95%</p>
         </div>
+
+        <div class="bg-red-100 p-6 rounded-xl shadow">
+          <h3 class="text-lg font-semibold text-red-800">
+            API Status
+          </h3>
+          <p class="text-3xl font-bold mt-2">Live</p>
+        </div>
+
       </section>
-
-  
-     <section id="upload" class="mt-10 relative opacity-60 pointer-events-none">
-  <div class="absolute inset-0 bg-white bg-opacity-80 z-10 flex flex-col items-center justify-center rounded-lg">
-    <h3 class="text-2xl font-bold text-green-800">🚀 Coming Soon</h3>
-    <p class="text-gray-600 text-center mt-2 px-4">
-      The ability to upload and analyze your business data is almost ready. <br/>
-      Stay tuned as we unlock this powerful feature!
-    </p>
-  </div>
-
-  <h3 class="text-2xl font-bold mb-4">Upload Your Business Data</h3>
-  <form action="/upload-data" method="POST" enctype="multipart/form-data"
-        class="bg-white p-6 rounded-lg shadow-md">
-
-    <div class="mb-4">
-      <label class="block text-gray-700 font-medium mb-2" for="domain">Business Domain</label>
-      <select name="domain" id="domain" required class="w-full p-2 border border-gray-300 rounded-md">
-        <option value="" disabled selected>Select domain</option>
-        <option value="ecommerce">E-Commerce</option>
-        <option value="food_delivery">Food Delivery</option>
-        <option value="healthcare">Healthcare</option>
-        <option value="education">Education</option>
-        <option value="retail">Retail</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-
-    <div class="mb-4">
-      <label class="block text-gray-700 font-medium mb-2" for="targetField">Primary Goal</label>
-      <select name="targetField" id="targetField" required class="w-full p-2 border border-gray-300 rounded-md">
-        <option value="" disabled selected>Select improvement area</option>
-        <option value="sales">Sales</option>
-        <option value="customer_retention">Customer Retention</option>
-        <option value="site_traffic">Site Traffic</option>
-        <option value="conversion_rate">Conversion Rate</option>
-        <option value="delivery_time">Delivery Time</option>
-        <option value="user_engagement">User Engagement</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-
-    <div class="mb-4">
-      <label class="block text-gray-700 font-medium mb-2" for="customTarget">Describe Your Goal (Optional)</label>
-      <input type="text" name="customTarget" id="customTarget"
-             placeholder="e.g., Reduce order returns by 15%"
-             class="w-full p-2 border border-gray-300 rounded-md"/>
-    </div>
-
-    <div class="mb-4">
-      <label class="block text-gray-700 font-medium mb-2" for="dataFile">Upload Data File</label>
-      <input type="file" name="dataFile" id="dataFile" required accept=".csv, .xlsx, .xls"
-             class="w-full p-2 border border-gray-300 rounded-md"/>
-    </div>
-
-  </form>
-</section>
 
 
       
-      <section id="smart-ai" class="mt-10">
-        <h3 class="text-2xl font-bold mb-4 text-green-700">🔍 AI Smart Recommendations</h3>
-        <div class="bg-white shadow-md p-6 rounded-xl">
-          <p class="text-gray-700 mb-4">Once your data is analyzed, AI will suggest improvements tailored to your startup’s goals.</p>
-          <ul class="list-disc list-inside space-y-2 text-gray-700">
-            <li>Predict high-value customer segments.</li>
-            <li>Detect sales bottlenecks using ML models.</li>
-            <li>Suggest personalized product bundles for upselling.</li>
-            <li>Generate automatic marketing strategy outlines.</li>
-          </ul>
-          <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">
-            View Recommendations →
-          </button>
+      <section>
+        <h3 class="text-3xl font-bold text-green-700 mb-8">
+          Available AI Services
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <a href="/Evaluation"
+             class="bg-white p-8 rounded-2xl shadow hover:scale-105 transition text-center">
+            <div class="text-5xl mb-4">🛒</div>
+            <h4 class="font-bold text-lg">Purchase / Travel</h4>
+            <p class="text-gray-500 mt-2">Predict customer buying behavior</p>
+          </a>
+
+          <a href="/medicine_predictor"
+             class="bg-white p-8 rounded-2xl shadow hover:scale-105 transition text-center">
+            <div class="text-5xl mb-4">💊</div>
+            <h4 class="font-bold text-lg">Medicine Predictor</h4>
+            <p class="text-gray-500 mt-2">Recommend medicine intelligently</p>
+          </a>
+
+          <a href="/Disease_predictor"
+             class="bg-white p-8 rounded-2xl shadow hover:scale-105 transition text-center">
+            <div class="text-5xl mb-4">🩺</div>
+            <h4 class="font-bold text-lg">Disease Predictor</h4>
+            <p class="text-gray-500 mt-2">Predict diseases from symptoms</p>
+          </a>
+
+          <a href="/crowd_predictor"
+             class="bg-white p-8 rounded-2xl shadow hover:scale-105 transition text-center">
+            <div class="text-5xl mb-4">👥</div>
+            <h4 class="font-bold text-lg">Crowd Predictor</h4>
+            <p class="text-gray-500 mt-2">Forecast crowd using date & location</p>
+          </a>
+
         </div>
       </section>
 
-      
-      <section id="reports" class="mt-10">
-        <h3 class="text-2xl font-bold mb-4">📄 Recent AI Reports</h3>
-        <ul class="space-y-3 text-gray-700">
-          <li>🧠 Product Suggestions by AI – July 2025</li>
-          <li>🚀 Sales Growth Model Evaluation – Q2</li>
-          <li>📉 Churn Risk Predictions – Current</li>
-        </ul>
-      </section>
     </main>
   </div>
 
-  <footer class="bg-white py-6 border-t text-center text-sm text-gray-500 mt-10">
-    &copy; 2025 Algnition AI. Empowering Startups with Intelligence.
-  </footer>
-</body>
 
+ 
+
+</body>
 </html>

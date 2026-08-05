@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowd Prediction</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .form-container{
+            width:450px;
+            background:white;
+            padding:30px;
+            border-radius:12px;
+            box-shadow:0 5px 20px rgba(0,0,0,.15);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        label{
+            display:block;
+            margin-top:15px;
+            font-weight:bold;
+        }
+
+        input,select{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            border:1px solid #ccc;
+            border-radius:6px;
+            font-size:15px;
+        }
+
+        button{
+            width:100%;
+            margin-top:25px;
+            padding:12px;
+            border:none;
+            background:#007bff;
+            color:white;
+            font-size:17px;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>Crowd Prediction</h2>
+
+    <form action="/submit" method="POST">
+
+        <label>Place</label>
+        <input type="text" name="Place" required>
+
+        <label>State</label>
+        <input type="text" name="State" required>
+
+        <label>Date & Time</label>
+        <input type="datetime-local" name="DateTime" required>
+
+       <label>Weather</label>
+<select name="Weather" required>
+    <option value="Clear">Clear</option>
+    <option value="Sunny">Sunny</option>
+    <option value="Cloudy">Cloudy</option>
+    <option value="Rainy">Rainy</option>
+    <option value="Foggy">Foggy</option>
+</select>
+
+<label>Event</label>
+<select name="Event" required>
+    <option value="None">None</option>
+    <option value="Festival">Festival</option>
+    <option value="National Holiday">National Holiday</option>
+    <option value="Cultural Event">Cultural Event</option>
+    <option value="Sports Event">Sports Event</option>
+    <option value="Concert">Concert</option>
+    <option value="Religious Gathering">Religious Gathering</option>
+</select>
+
+<label>Region</label>
+<select name="Region" required>
+    <option value="North">North</option>
+    <option value="South">South</option>
+    <option value="East">East</option>
+    <option value="West">West</option>
+    <option value="Central">Central</option>
+</select>
+
+<label>Transportation Type</label>
+<select name="Transportation_Type" required>
+    <option value="Public">Public</option>
+    <option value="Private">Private</option>
+</select>
+        <button type="submit">
+            Predict Crowd
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

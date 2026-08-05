@@ -51,8 +51,9 @@ const port=3000;
     app.post('/register',async (req,res)=>
     {
 
-        let {companyName,domainName,email,password}=req.body;
-        if(!companyName || !domainName || !email|| !password) return res.send('<h1> Fill everyThing First</h1>')
+        let {name,username,email,password}=req.body;
+
+        if(!name || !username || !email|| !password) return res.send('<h1> Fill everyThing First</h1>')
 
             try{
 
@@ -65,8 +66,8 @@ const port=3000;
 
                 const new_user=await userdata.create(
                     {
-                        companyName,
-                        domainName,
+                        name,
+                        username,
                         password:hashed_password,
                         email
                     }
@@ -148,7 +149,7 @@ const port=3000;
       });
       
 
-    app.get('/disease_predictor',(req,res)=>
+    app.get('/disease_predictor',isLoggedIn,(req,res)=>
     {
        return res.render('Disease_predictor.ejs');
     });
@@ -174,7 +175,7 @@ const port=3000;
 
 
 
-    app.get('/medicine_predictor',(req,res)=>
+    app.get('/medicine_predictor',isLoggedIn,(req,res)=>
     {
         res.render('medicine_predict.ejs');
     })
@@ -195,7 +196,48 @@ const port=3000;
             return res.send('Cannot Predict');
         }
         
-    })
+    });
+
+
+    app.get('/crowd_predictor',(req,res)=>
+{
+        res.render('CrowdPrediction.ejs')
+})
+app.post("/submit", async (req, res) => {
+
+    try {
+
+        const {
+            Place,
+            State,
+            DateTime,
+            Weather,
+            Event,
+            Region,
+            Transportation_Type
+        } = req.body;
+
+        const response = await axios.post(
+            "http://127.0.0.1:5000/predict_crowd",
+            {
+                Place,
+                State,
+                Date: DateTime,
+                Weather,
+                Event,
+                Region,
+                Transportation_Type
+            }
+        );
+        console.log(response.data)
+        res.render("crowd_result.ejs",{prediction:response.data.prediction});
+
+    } catch(err){
+        console.log(err);
+        res.status(500).send(err.message);
+    }
+
+});
 
     app.listen(port,()=>
     {
